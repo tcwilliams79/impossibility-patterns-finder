@@ -1,0 +1,101 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00010",
+  "title": "Shannon Channel Capacity",
+  "domain": [
+    "Information Theory",
+    "Communication Systems",
+    "Signal Processing"
+  ],
+  "mechanism": "R",
+  "formal_statement": "For a communication channel with bandwidth B and signal-to-noise ratio SNR, the maximum reliable data rate (channel capacity) is: C = B log₂(1 + SNR) bits per second. Arbitrarily low error rates are achievable at rates below capacity; rates above capacity have irreducible error.",
+  "plain_language": "There is a fundamental limit to how much information can be reliably transmitted through a noisy channel, determined by bandwidth and signal strength. You cannot exceed this limit regardless of coding scheme.",
+  "assumptions_scope": [
+    "Additive white Gaussian noise (AWGN) channel",
+    "Continuous channel with unlimited bandwidth or discrete channel with defined capacity",
+    "Asymptotic regime (long codewords/messages)",
+    "Reliable communication means arbitrarily low error probability"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Assuming arbitrarily low error rates are achievable at any transmission rate",
+    "Not recognizing that exceeding capacity guarantees errors",
+    "Believing clever coding eliminates the fundamental limit",
+    "Ignoring the bandwidth-SNR tradeoff in system design"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Resource",
+      "description": "Increase signal-to-noise ratio (SNR)",
+      "examples": [
+        "Boost transmission power",
+        "Reduce noise (better receivers, shielding)",
+        "Move transmitter closer to receiver",
+        "Use directional antennas"
+      ],
+      "trade_offs": "Energy cost; regulatory limits on power; physical constraints; interference with other systems"
+    },
+    {
+      "type": "Resource",
+      "description": "Increase bandwidth",
+      "examples": [
+        "Use wider frequency bands (if available)",
+        "Multiple frequency channels (OFDM)",
+        "Spatial multiplexing (MIMO)",
+        "Time-division multiplexing"
+      ],
+      "trade_offs": "Spectrum is limited and regulated; interference; hardware complexity; cost"
+    },
+    {
+      "type": "Context",
+      "description": "Use optimal coding up to capacity",
+      "examples": [
+        "Error-correcting codes (Turbo codes, LDPC, Polar codes)",
+        "Approach capacity with finite-length codes",
+        "Adaptive modulation based on channel conditions"
+      ],
+      "trade_offs": "Computational complexity; latency from encoding/decoding; cannot exceed capacity"
+    },
+    {
+      "type": "Context",
+      "description": "Accept error floors or reduced rate",
+      "examples": [
+        "Operate below capacity with simple codes",
+        "Tolerate higher error rates for applications that can handle them",
+        "Use retransmission protocols (ARQ)"
+      ],
+      "trade_offs": "Reduced throughput or reliability; may not meet application requirements"
+    }
+  ],
+  "test_or_check": "Check if the claim requires reliable transmission at rates exceeding C = B log₂(1 + SNR) for given bandwidth and SNR. If arbitrarily low error rate claimed above capacity, flag as conflicting with Shannon limit.",
+  "references": [
+    "Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27(3), 379-423.",
+    "Cover, T. M., & Thomas, J. A. (2006). Elements of Information Theory (2nd ed.). Wiley-Interscience."
+  ],
+  "related_limits": [
+    "Nyquist-Shannon sampling theorem",
+    "Rate-distortion theory",
+    "Quantum channel capacity"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "Shannon's capacity theorem is one of the most important results in information theory and communications engineering. It provides both a fundamental limit and a constructive proof that this limit is achievable with appropriate coding.",
+  "mechanism_label": "Resource",
+  "keywords": [
+    "Capacity",
+    "Channel",
+    "Communication Systems",
+    "Information Theory",
+    "Shannon",
+    "Signal Processing"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.072517+00:00"
+  }
+}

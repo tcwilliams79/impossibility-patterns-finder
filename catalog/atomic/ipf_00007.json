@@ -1,0 +1,91 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00007",
+  "title": "Second Law of Thermodynamics (Entropy)",
+  "domain": [
+    "Thermodynamics",
+    "Physics",
+    "Statistical Mechanics"
+  ],
+  "mechanism": "R",
+  "formal_statement": "In an isolated system, the total entropy (disorder) never decreases over time: ΔS ≥ 0. For reversible processes ΔS = 0, for irreversible processes ΔS > 0.",
+  "plain_language": "Isolated systems naturally evolve toward states of higher disorder (entropy). You cannot extract useful work perpetually from a system without an external energy source or gradient.",
+  "assumptions_scope": [
+    "System is isolated (no energy or matter exchange with environment)",
+    "Macroscopic time scales (not brief quantum fluctuations)",
+    "Statistical interpretation (valid for large number of particles)",
+    "Classical or quantum statistical mechanics applies"
+  ],
+  "evidence_grade": "Law",
+  "typical_traps": [
+    "Designing perpetual motion machines of the second kind",
+    "Ignoring that local entropy decreases require global entropy increases",
+    "Assuming perfect efficiency in energy conversion is achievable",
+    "Not recognizing that ordered structures (life, computers) require entropy export"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Context",
+      "description": "Use open systems with external energy gradients",
+      "examples": [
+        "Solar energy input to Earth (drives life and weather)",
+        "Temperature gradients for heat engines",
+        "Chemical gradients for batteries",
+        "Gravitational potential for hydroelectric power"
+      ],
+      "trade_offs": "Requires external energy source; system no longer isolated; entropy increases in larger system"
+    },
+    {
+      "type": "Resource",
+      "description": "Accept fundamental efficiency bounds",
+      "examples": [
+        "Carnot efficiency limit for heat engines: η ≤ 1 - Tc/Th",
+        "Minimum energy for computation (Landauer limit)",
+        "Accept energy dissipation as waste heat",
+        "Design for maximum achievable efficiency, not perfection"
+      ],
+      "trade_offs": "Cannot reach 100% efficiency; some energy always degraded to heat"
+    },
+    {
+      "type": "Context",
+      "description": "Exploit local entropy reduction with global increase",
+      "examples": [
+        "Refrigerators (cool inside, heat outside)",
+        "Maxwell's demon with information erasure",
+        "Biological systems (decrease entropy locally via metabolism)",
+        "Self-assembly using chemical energy"
+      ],
+      "trade_offs": "Total entropy of universe still increases; requires energy input"
+    }
+  ],
+  "test_or_check": "Check if the claim requires perpetual work extraction from isolated system, or perfect efficiency in energy conversion, or entropy decrease without compensating increase elsewhere. If yes, flag as conflicting with Second Law.",
+  "references": [
+    "Carnot, S. (1824). Réflexions sur la puissance motrice du feu et sur les machines propres à développer cette puissance. Bachelier.",
+    "Clausius, R. (1865). Über verschiedene für die Anwendung bequeme Formen der Hauptgleichungen der mechanischen Wärmetheorie. Annalen der Physik, 201(7), 353-400."
+  ],
+  "related_limits": [
+    "Landauer's principle (computational thermodynamics)",
+    "Arrow of time",
+    "Shannon entropy (information theory connection)"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "The Second Law is one of the most fundamental principles in physics, with implications spanning thermodynamics, information theory, cosmology, and the arrow of time. It has never been violated in any observed physical process.",
+  "mechanism_label": "Resource",
+  "keywords": [
+    "(Entropy)",
+    "Physics",
+    "Second",
+    "Statistical Mechanics",
+    "Thermodynamics"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.069284+00:00"
+  }
+}

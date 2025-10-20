@@ -1,0 +1,96 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00008",
+  "title": "Arrow's Impossibility Theorem",
+  "domain": [
+    "Social Choice Theory",
+    "Economics",
+    "Voting Theory",
+    "Political Science"
+  ],
+  "mechanism": "C",
+  "formal_statement": "No rank-order voting system can satisfy all of the following fairness criteria simultaneously when there are three or more alternatives: (1) Unrestricted domain, (2) Pareto efficiency, (3) Independence of irrelevant alternatives (IIA), (4) Non-dictatorship.",
+  "plain_language": "There is no perfectly fair voting system for ranking three or more options that satisfies all intuitive fairness criteria. Every voting method must sacrifice at least one desirable property.",
+  "assumptions_scope": [
+    "Three or more alternatives to choose from",
+    "Ordinal preferences (rankings) from voters",
+    "Deterministic aggregation rule",
+    "All possible preference orderings allowed (unrestricted domain)"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Claiming a perfectly fair rank-order voting system exists",
+    "Not recognizing that all voting methods violate at least one axiom",
+    "Assuming popular voting methods (plurality, ranked-choice) avoid the impossibility",
+    "Designing voting systems without analyzing which axioms are sacrificed"
+  ],
+  "escape_hatches": [
+    {
+      "kind": "WeakenRequirement",
+      "description": "Relax one of the fairness axioms",
+      "examples": [
+        "Accept IIA violations (Ranked-choice voting, Borda count)",
+        "Restrict domain to single-peaked preferences (Median voter theorem)",
+        "Allow randomization (probabilistic social choice)",
+        "Accept limited dictatorship (weighted voting)"
+      ],
+      "trade_offs": "Specific fairness property violated; strategic voting opportunities may arise",
+      "mechanism": "C"
+    },
+    {
+      "kind": "ReinterpretObjective",
+      "description": "Use cardinal utilities instead of ordinal rankings",
+      "examples": [
+        "Score voting or range voting",
+        "Quadratic voting",
+        "Utilitarian aggregation with interpersonal comparisons"
+      ],
+      "trade_offs": "Requires cardinal utility information (harder to elicit); strategic exaggeration possible",
+      "mechanism": "C"
+    },
+    {
+      "kind": "RestrictDomain",
+      "description": "Reduce to two alternatives",
+      "examples": [
+        "Binary choices (simple majority rule works)",
+        "Pairwise runoff between two finalists",
+        "Sequential elimination to two candidates"
+      ],
+      "trade_offs": "Limited applicability; agenda-setting power becomes critical; information loss",
+      "mechanism": "C"
+    }
+  ],
+  "test_or_check": "Identify if the claim involves rank-order aggregation with three or more alternatives. Check if all four Arrow axioms are claimed simultaneously. If yes, flag as conflicting with Arrow's theorem.",
+  "references": [
+    "Arrow, K. J. (1950). A Difficulty in the Concept of Social Welfare. Journal of Political Economy, 58(4), 328-346. doi:10.1086/256963",
+    "Arrow, K. J. (1963). Social Choice and Individual Values (2nd ed.). Yale University Press."
+  ],
+  "related_limits": [
+    "Gibbard-Satterthwaite theorem (strategic voting)",
+    "Condorcet paradox",
+    "Coordination-Incentive-Trust Trilemma",
+    "IPF-00011"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "Arrow's theorem won the Nobel Prize in Economics and fundamentally changed how we understand democratic choice. It does not mean democracy is impossible, but that we must consciously choose which fairness criteria to prioritize.",
+  "mechanism_label": "Context",
+  "keywords": [
+    "Arrow's",
+    "Economics",
+    "Impossibility",
+    "Political Science",
+    "Social Choice Theory",
+    "Theorem",
+    "Voting Theory"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.070405+00:00"
+  }
+}

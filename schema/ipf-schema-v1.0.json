@@ -1,0 +1,534 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impossibility-patterns-finder.org/schemas/v1.0/catalog-entry.json",
+  "title": "IPF Catalog Entry Schema",
+  "description": "Schema for Impossibility Patterns Finder (IPF) catalog entries, version 1.0",
+  "type": "object",
+  "required": [
+    "limit_id",
+    "title",
+    "domain",
+    "mechanism",
+    "formal_statement",
+    "plain_language",
+    "assumptions_scope",
+    "evidence_grade",
+    "typical_traps",
+    "escape_hatches",
+    "test_or_check",
+    "references",
+    "related_limits",
+    "version",
+    "date_added",
+    "last_reviewed",
+    "status"
+  ],
+  "properties": {
+    "limit_id": {
+      "type": "string",
+      "pattern": "^IPF-[0-9]{5}$",
+      "description": "Unique identifier for the limit (format: IPF-00001)"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 200,
+      "description": "Human-readable title for the impossibility result"
+    },
+    "domain": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
+      "minItems": 1,
+      "description": "Scientific or technical domains where this limit applies"
+    },
+    "mechanism": {
+      "type": "string",
+      "enum": [
+        "S",
+        "C",
+        "R"
+      ],
+      "description": "SCR classification: S=Self-reference, C=Context/Incompatibility, R=Resource/Monotonicity"
+    },
+    "formal_statement": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Precise mathematical or logical statement of the limit"
+    },
+    "plain_language": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Non-technical explanation accessible to educated non-specialists"
+    },
+    "assumptions_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      },
+      "minItems": 1,
+      "description": "List of assumptions under which this limit holds"
+    },
+    "evidence_grade": {
+      "type": "string",
+      "enum": [
+        "Theorem",
+        "Law",
+        "Principle",
+        "Conjecture",
+        "Empirical Regularity"
+      ],
+      "description": "Epistemic status of the impossibility result"
+    },
+    "evidence_basis": {
+      "type": "string",
+      "description": "For compound limits: provenance and synthesis explanation (optional for atomic limits)"
+    },
+    "typical_traps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 5
+      },
+      "minItems": 1,
+      "description": "Common misconceptions or errors when encountering this limit"
+    },
+    "escape_hatches": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "kind",
+              "description"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "RestrictDomain",
+                  "Approximate",
+                  "Randomize",
+                  "ResourceBounded",
+                  "ReinterpretObjective",
+                  "AllowError",
+                  "WeakenRequirement",
+                  "UseOracle"
+                ]
+              },
+              "description": {
+                "type": "string"
+              },
+              "examples": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "trade_offs": {
+                "type": "string"
+              },
+              "mechanism": {
+                "type": "string",
+                "enum": [
+                  "S",
+                  "C",
+                  "R"
+                ]
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "description"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "S",
+                  "C",
+                  "R"
+                ]
+              },
+              "description": {
+                "type": "string"
+              },
+              "examples": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "trade_offs": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 1,
+      "description": "Typed relaxations; accepts new 'kind' form or legacy SCR 'type' form."
+    },
+    "test_or_check": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Procedure for determining if a claim conflicts with this limit"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 5,
+            "description": "Simple citation string (for atomic limits)"
+          },
+          {
+            "type": "object",
+            "required": [
+              "key",
+              "citation",
+              "relevance",
+              "strength"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[A-Za-z]+-[0-9]{4}$",
+                "description": "Citation key (format: Author-Year)"
+              },
+              "citation": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Full bibliographic citation"
+              },
+              "relevance": {
+                "type": "string",
+                "minLength": 5,
+                "description": "How this reference supports the limit"
+              },
+              "strength": {
+                "type": "string",
+                "enum": [
+                  "foundational",
+                  "supporting",
+                  "illustrative"
+                ],
+                "description": "Evidential weight of this reference"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Structured reference (for compound limits)"
+          }
+        ]
+      },
+      "minItems": 1,
+      "description": "Academic references supporting this limit"
+    },
+    "related_limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      },
+      "description": "Other limits with logical or structural connections"
+    },
+    "synthesis_components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "limit_id",
+          "role",
+          "mechanism"
+        ],
+        "properties": {
+          "limit_id": {
+            "type": "string",
+            "description": "ID of component limit or canonical name"
+          },
+          "role": {
+            "type": "string",
+            "minLength": 5,
+            "description": "How this component contributes to the compound limit"
+          },
+          "mechanism": {
+            "type": "string",
+            "enum": [
+              "S",
+              "C",
+              "R"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Component limits that synthesize into this compound limit (optional)"
+    },
+    "cross_domain_manifestations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "domain",
+          "instance",
+          "analysis"
+        ],
+        "properties": {
+          "domain": {
+            "type": "string",
+            "minLength": 3,
+            "description": "Domain where this limit manifests"
+          },
+          "instance": {
+            "type": "string",
+            "minLength": 3,
+            "description": "Specific example or system"
+          },
+          "analysis": {
+            "type": "string",
+            "minLength": 10,
+            "description": "How the limit applies in this domain"
+          },
+          "reference": {
+            "type": "string",
+            "description": "Citation for this manifestation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "How this limit appears across different domains (optional)"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$",
+      "description": "Version number of this catalog entry (format: 1.0)"
+    },
+    "date_added": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when this entry was added to catalog (ISO 8601)"
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of most recent review (ISO 8601)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "deprecated",
+        "under_review",
+        "draft"
+      ],
+      "description": "Current status of this catalog entry"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional context or commentary (optional)"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "mechanism_label": {
+      "type": "string",
+      "enum": [
+        "SelfReference",
+        "Context",
+        "Resource"
+      ]
+    },
+    "mechanism_secondary": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "S",
+          "C",
+          "R"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "scale_level": {
+      "type": "string",
+      "enum": [
+        "micro",
+        "meso",
+        "macro",
+        "universal"
+      ]
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "coverage_assessment": {
+          "type": "string",
+          "enum": [
+            "sufficient",
+            "insufficient",
+            "unknown"
+          ]
+        },
+        "precision_target": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "recall_target": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "false_alarm_target": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "withhold_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reviewers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "model",
+              "resource",
+              "epistemic",
+              "computational",
+              "structural",
+              "measurement",
+              "other"
+            ]
+          },
+          "necessary": {
+            "type": "boolean",
+            "default": true
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bridges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "target_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Reduction",
+              "Implication",
+              "Incompatibility",
+              "Analogy",
+              "Equivalence",
+              "Monotonicity"
+            ]
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "patternProperties": {
+    "^_": {
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evidence_grade": {
+            "const": "Principle"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "evidence_basis"
+        ],
+        "properties": {
+          "synthesis_components": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

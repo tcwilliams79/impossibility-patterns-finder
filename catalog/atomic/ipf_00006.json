@@ -1,0 +1,92 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00006",
+  "title": "Heisenberg Uncertainty Principle",
+  "domain": [
+    "Quantum Mechanics",
+    "Physics",
+    "Measurement Theory"
+  ],
+  "mechanism": "C",
+  "formal_statement": "For any quantum state, the product of the standard deviations of two non-commuting observables (e.g., position x and momentum p) satisfies: Delta_x * Delta_p >= hbar/2, where hbar is the reduced Planck constant.",
+  "plain_language": "Certain pairs of physical properties, like position and momentum, cannot both be measured with arbitrary precision simultaneously. The more precisely you know one, the less precisely you can know the other.",
+  "assumptions_scope": [
+    "Standard quantum mechanics (non-relativistic)",
+    "Observables represented by non-commuting operators",
+    "Intrinsic uncertainty (not merely measurement disturbance)",
+    "Applies to fundamental quantum systems, not macroscopic objects"
+  ],
+  "evidence_grade": "Principle",
+  "evidence_basis": "Derived from the canonical commutation relations in quantum mechanics (Heisenberg 1927, Kennard 1927). The uncertainty principle is a fundamental consequence of wave-particle duality and the mathematical structure of quantum theory.",
+  "typical_traps": [
+    "Assuming arbitrary precision is achievable for complementary observables simultaneously",
+    "Treating uncertainty as purely measurement error (it's intrinsic to quantum states)",
+    "Confusing Heisenberg uncertainty with classical measurement limitations",
+    "Believing better instruments can overcome the principle"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Context",
+      "description": "Measure commuting observables instead",
+      "examples": [
+        "Position and energy (in certain cases)",
+        "Spin in same direction (Sz and Sz)",
+        "Multiple position measurements at different times",
+        "Compatible observables with commuting operators"
+      ],
+      "trade_offs": "Cannot access complementary information; limited to compatible measurements"
+    },
+    {
+      "type": "Context",
+      "description": "Accept fundamental tradeoff in precision",
+      "examples": [
+        "Design experiments that require only one observable precisely",
+        "Use statistical ensembles to characterize distributions",
+        "Optimize measurement for specific application (e.g., prioritize position)"
+      ],
+      "trade_offs": "Must choose which observable matters more; complementary information remains uncertain"
+    },
+    {
+      "type": "Resource",
+      "description": "Use weak measurements or conditional strategies",
+      "examples": [
+        "Weak measurement (minimal disturbance but low information gain)",
+        "Quantum state tomography across many systems",
+        "Entanglement-assisted measurements",
+        "Squeezed states (reduce uncertainty in one variable at expense of other)"
+      ],
+      "trade_offs": "Requires many measurements or auxiliary systems; tradeoff persists but can be optimized"
+    }
+  ],
+  "test_or_check": "Identify if the claim requires simultaneous precise knowledge of non-commuting observables (position-momentum, energy-time, angular momentum components). If yes, flag as conflicting with uncertainty principle.",
+  "references": [
+    "Heisenberg, W. (1927). Über den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik. Zeitschrift für Physik, 43(3-4), 172-198.",
+    "Kennard, E. H. (1927). Zur Quantenmechanik einfacher Bewegungstypen. Zeitschrift für Physik, 44(4-5), 326-352."
+  ],
+  "related_limits": [
+    "No-Cloning Theorem",
+    "Wave-particle duality",
+    "IPF-00005"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "The uncertainty principle is often misunderstood as a limitation of measurement technology. It is actually a fundamental property of quantum states themselves, reflecting wave-like nature of matter.",
+  "mechanism_label": "Context",
+  "keywords": [
+    "Heisenberg",
+    "Measurement Theory",
+    "Physics",
+    "Principle",
+    "Quantum Mechanics",
+    "Uncertainty"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.067807+00:00"
+  }
+}

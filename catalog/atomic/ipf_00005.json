@@ -1,0 +1,88 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00005",
+  "title": "No-Cloning Theorem",
+  "domain": [
+    "Quantum Mechanics",
+    "Quantum Information",
+    "Quantum Computing"
+  ],
+  "mechanism": "C",
+  "formal_statement": "There is no unitary operation that can copy an arbitrary unknown quantum state. For any quantum state |ψ⟩, no process can create |ψ⟩|ψ⟩ from |ψ⟩|0⟩ for all |ψ⟩.",
+  "plain_language": "You cannot make a perfect copy of an unknown quantum state. Unlike classical information, quantum information cannot be duplicated.",
+  "assumptions_scope": [
+    "Quantum state is unknown (not in a known basis)",
+    "Perfect copying required (high fidelity, not approximate)",
+    "Unitary evolution (standard quantum mechanics)",
+    "No measurement allowed before copying (measurement collapses state)"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Promising a quantum Xerox machine or perfect quantum memory backup",
+    "Confusing classical bits (which can be copied) with qubits",
+    "Not recognizing that measurement to copy destroys superposition",
+    "Assuming quantum information behaves like classical information"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Context",
+      "description": "Clone states from known basis",
+      "examples": [
+        "Copy computational basis states |0⟩, |1⟩ (classical information)",
+        "Clone states from pre-agreed orthogonal set",
+        "Prepare multiple identical states from known preparation procedure"
+      ],
+      "trade_offs": "Only works when state is known in advance; not useful for arbitrary quantum information"
+    },
+    {
+      "type": "Resource",
+      "description": "Accept approximate or probabilistic cloning",
+      "examples": [
+        "Quantum state tomography (requires many copies, measurements)",
+        "Approximate cloning with fidelity <1",
+        "Probabilistic cloning (succeeds with probability <1)"
+      ],
+      "trade_offs": "Imperfect copies; requires resources (many copies or ancilla systems); fidelity-probability tradeoff"
+    },
+    {
+      "type": "Context",
+      "description": "Use quantum teleportation instead of cloning",
+      "examples": [
+        "Teleport state (moves it, doesn't copy)",
+        "Entanglement distribution for quantum communication",
+        "Quantum error correction (protects one logical qubit)"
+      ],
+      "trade_offs": "State is transferred, not duplicated; requires entanglement and classical communication"
+    }
+  ],
+  "test_or_check": "Check if the claim requires perfect duplication of arbitrary unknown quantum states. If yes, and no measurement or prior knowledge assumed, flag as conflicting with no-cloning theorem.",
+  "references": [
+    "Wootters, W. K., & Zurek, W. H. (1982). A Single Quantum Cannot be Cloned. Nature, 299(5886), 802-803. doi:10.1038/299802a0",
+    "Dieks, D. (1982). Communication by EPR devices. Physics Letters A, 92(6), 271-272."
+  ],
+  "related_limits": [
+    "Heisenberg Uncertainty Principle",
+    "Quantum teleportation (not cloning)",
+    "IPF-00006"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "The no-cloning theorem is fundamental to quantum cryptography (ensures eavesdropping is detectable) and quantum information theory. It distinguishes quantum information from classical information.",
+  "mechanism_label": "Context",
+  "keywords": [
+    "No-Cloning",
+    "Quantum Computing",
+    "Quantum Information",
+    "Quantum Mechanics",
+    "Theorem"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.066586+00:00"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00002",
+  "title": "Rice's Theorem",
+  "domain": [
+    "Computation",
+    "Programs",
+    "Theory of Computation"
+  ],
+  "mechanism": "S",
+  "formal_statement": "For any non-trivial property of the language recognized by a Turing machine, there is no general algorithm that decides whether a given Turing machine's language has that property.",
+  "plain_language": "No general algorithm can decide any meaningful semantic property about what programs do, only what they look like syntactically.",
+  "assumptions_scope": [
+    "Turing-equivalent computational model",
+    "Property must be semantic (about program behavior), not syntactic",
+    "Property must be non-trivial (true for some programs, false for others)",
+    "Decision must be total and correct for all programs"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Confusing syntactic properties (decidable) with semantic properties (undecidable)",
+    "Believing specific program analysis tools solve the general problem",
+    "Not recognizing that 'ever divides by zero' or 'always terminates' are non-trivial semantic properties",
+    "Assuming heuristics that work well in practice overcome the theoretical limit"
+  ],
+  "escape_hatches": [
+    {
+      "kind": "ReinterpretObjective",
+      "description": "Analyze only syntactic properties",
+      "examples": [
+        "Count lines of code or cyclomatic complexity",
+        "Check for presence of specific keywords or patterns",
+        "Verify code formatting or style conventions",
+        "Parse tree analysis without semantic evaluation"
+      ],
+      "trade_offs": "Cannot reason about program behavior; limited utility for correctness or security",
+      "mechanism": "S"
+    },
+    {
+      "kind": "RestrictDomain",
+      "description": "Restrict to decidable program class",
+      "examples": [
+        "Analyze only loop-free or recursion-free code",
+        "Restrict to primitive recursive functions",
+        "Use type systems to enforce termination (e.g., total functional languages)"
+      ],
+      "trade_offs": "Many useful programs cannot be expressed; reduced computational power",
+      "mechanism": "S"
+    },
+    {
+      "kind": "AllowError",
+      "description": "Accept sound but incomplete analysis",
+      "examples": [
+        "Conservative approximations (may report false positives)",
+        "Abstract interpretation with loss of precision",
+        "Bounded verification with timeouts"
+      ],
+      "trade_offs": "False alarms or incomplete coverage; requires manual review of uncertain cases",
+      "mechanism": "S"
+    }
+  ],
+  "test_or_check": "Identify whether the claim requires deciding a property about what programs compute (semantic) versus how they are written (syntactic). If semantic and non-trivial, flag as conflicting with Rice's theorem.",
+  "references": [
+    "Rice, H. G. (1953). Classes of recursively enumerable sets and their decision problems. Transactions of the American Mathematical Society, 74(2), 358-366. doi:10.1090/s0002-9947-1953-0053041-6"
+  ],
+  "related_limits": [
+    "Halting Problem",
+    "Gödel incompleteness theorems",
+    "IPF-00001"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "Rice's theorem generalizes the Halting Problem to all non-trivial semantic properties. It is a cornerstone result for understanding limits of program analysis.",
+  "mechanism_label": "SelfReference",
+  "keywords": [
+    "Computation",
+    "Programs",
+    "Rice's",
+    "Theorem",
+    "Theory of Computation"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.062778+00:00"
+  }
+}

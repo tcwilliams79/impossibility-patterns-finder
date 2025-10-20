@@ -1,0 +1,93 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00001",
+  "title": "Halting Problem (Undecidability)",
+  "domain": [
+    "Computation",
+    "Programs",
+    "Theory of Computation"
+  ],
+  "mechanism": "S",
+  "formal_statement": "No total computable procedure decides, for all programs P and inputs x, whether P(x) halts.",
+  "plain_language": "No algorithm can always tell if any given program will finish running or continue forever.",
+  "assumptions_scope": [
+    "Turing-equivalent model of computation",
+    "Total correctness required (no false positives or false negatives)",
+    "All inputs and programs allowed (unrestricted domain)",
+    "Deterministic computation model"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Assuming static analysis can be complete for arbitrary programs",
+    "Confusing partial heuristics with guaranteed decision procedures",
+    "Believing that 'good enough' analysis solves the theoretical problem",
+    "Not recognizing that any non-trivial semantic property faces similar limits"
+  ],
+  "escape_hatches": [
+    {
+      "kind": "RestrictDomain",
+      "description": "Restrict computational model to decidable subset",
+      "examples": [
+        "Finite-state machines or regular languages",
+        "Total functional languages (e.g., Coq, Agda)",
+        "Primitive recursive functions",
+        "Pushdown automata for context-free languages"
+      ],
+      "trade_offs": "Reduced expressiveness; some useful programs cannot be written or analyzed in restricted models",
+      "mechanism": "S"
+    },
+    {
+      "kind": "AllowError",
+      "description": "Accept incomplete analysis with timeout",
+      "examples": [
+        "Bounded model checking with timeout returning 'Unknown'",
+        "Bounded recursion depth or loop iteration limits",
+        "Resource-bounded symbolic execution"
+      ],
+      "trade_offs": "Must handle indeterminate cases in downstream logic; no guarantee of completeness",
+      "mechanism": "S"
+    },
+    {
+      "kind": "RestrictDomain",
+      "description": "Require user-supplied termination proofs",
+      "examples": [
+        "Loop invariants and ranking functions",
+        "Dependent types with totality checking",
+        "Manual annotations for recursion bounds"
+      ],
+      "trade_offs": "Shifts burden to programmer; requires expertise; labor-intensive",
+      "mechanism": "S"
+    }
+  ],
+  "test_or_check": "Map the claim to a decision problem. Check if the claim requires deciding whether arbitrary programs halt, or any non-trivial semantic property. Look for reductions from known undecidable problems.",
+  "references": [
+    "Turing, A. M. (1936). On computable numbers, with an application to the Entscheidungsproblem. Proceedings of the London Mathematical Society, 2(42), 230-265.",
+    "Sipser, M. (2013). Introduction to the Theory of Computation (3rd ed.). Cengage Learning. Chapter 9."
+  ],
+  "related_limits": [
+    "Rice's theorem",
+    "Gödel incompleteness theorems",
+    "IPF-00002"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-19",
+  "status": "active",
+  "notes": "This is the foundational undecidability result in computer science. It establishes fundamental limits on automated program analysis and verification.",
+  "mechanism_label": "SelfReference",
+  "keywords": [
+    "(Undecidability)",
+    "Computation",
+    "Halting",
+    "Problem",
+    "Programs",
+    "Theory of Computation"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.061434+00:00"
+  }
+}

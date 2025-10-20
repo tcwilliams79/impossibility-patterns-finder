@@ -1,0 +1,67 @@
+{
+  "title": "Impossibility Patterns Finder Schema Specification v1.0",
+  "description": "JSON Schema for documenting theoretical limits across scientific domains with typed relaxations. The IPF Schema enables machine-readable, versioned documentation of impossibility results spanning computation, physics, statistics, economics, and information theory. This release includes: (1) formal JSON Schema specification (Draft 2020-12), (2) comprehensive documentation with validation rules and implementation guidelines, (3) seed catalog of 11 validated entries demonstrating atomic and compound limits, (4) Python validation tool for quality assurance, and (5) contribution guidelines for community extension. The schema supports the SCR (Self-reference, Context, Resource) taxonomy and provides typed escape hatches showing how to work around each limit. Designed for integration into AI-assisted research workflows to improve reliability by catching dead-end ideas early.",
+  "creators": [
+    {
+      "name": "Williams, Thomas C.",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "upload_type": "dataset",
+  "publication_date": "2025-10-19",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "impossibility results",
+    "theoretical limits",
+    "JSON Schema",
+    "AI-assisted research",
+    "reliability layer",
+    "cross-domain taxonomy",
+    "SCR taxonomy",
+    "barrier checking",
+    "research infrastructure",
+    "machine-readable catalog",
+    "escape hatches",
+    "typed relaxations"
+  ],
+  "subjects": [
+    {
+      "term": "Computer and information sciences",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh85029518.html",
+      "scheme": "url"
+    },
+    {
+      "term": "Research methods",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh85113039.html",
+      "scheme": "url"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.17388374",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-technicalnote",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.17083195",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote",
+      "scheme": "doi"
+    }
+  ],
+  "contributors": [],
+  "references": [
+    "Williams, Thomas C. 2025. Impossibility Patterns Finder: A reliability layer for AI-assisted research. V0.1. Zenodo. https://doi.org/10.5281/zenodo.17388374",
+    "Williams, Thomas C. 2025. Structural Mechanisms of Theoretical Limits: A Compact Cross-Domain Framework. v1.32. Zenodo. https://doi.org/10.5281/zenodo.17083195"
+  ],
+  "version": "1.0",
+  "language": "eng",
+  "notes": "This schema specification is the reference implementation for the Impossibility Patterns Finder (IPF) framework described in Williams (2025, Zenodo DOI 10.5281/zenodo.17388374). The seed catalog includes 11 entries: IPF-00001 (Halting Problem), IPF-00002 (Rice's Theorem), IPF-00003 (No-Free-Lunch Optimization), IPF-00004 (No-Free-Lunch Learning), IPF-00005 (No-Cloning Theorem), IPF-00006 (Heisenberg Uncertainty), IPF-00007 (Second Law of Thermodynamics), IPF-00008 (Arrow's Impossibility), IPF-00009 (Bias-Variance Tradeoff), IPF-00010 (Shannon Capacity), and IPF-00011 (Coordination-Incentive-Trust Trilemma). All entries validate against the formal schema and include typed escape hatches following the SCR taxonomy. Validation tools provided in Python. Community contributions welcome via GitHub repository.",
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ]
+}

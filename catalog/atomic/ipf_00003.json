@@ -1,0 +1,88 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00003",
+  "title": "No-Free-Lunch Theorem (Optimization)",
+  "domain": [
+    "Optimization",
+    "Machine Learning",
+    "Search Algorithms"
+  ],
+  "mechanism": "C",
+  "formal_statement": "Averaged over all possible objective functions, all optimization algorithms that do not re-sample points have identical performance.",
+  "plain_language": "When averaged across all possible optimization problems, no search algorithm is universally better than any other, including random search.",
+  "assumptions_scope": [
+    "All objective functions are equally likely (uniform distribution)",
+    "Performance measured by expected optimization progress",
+    "Algorithms do not re-evaluate previously sampled points",
+    "Finite search space or well-defined function class"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Assuming a single optimization method wins universally across all problems",
+    "Benchmarking algorithms without specifying the problem distribution",
+    "Ignoring that algorithm performance depends critically on problem structure",
+    "Claiming algorithm superiority based on narrow test sets"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Context",
+      "description": "Specify target function class or prior distribution",
+      "examples": [
+        "Smooth, differentiable functions (enables gradient descent)",
+        "Convex optimization problems",
+        "Problems with known structure (separability, symmetry)",
+        "Bayesian optimization with Gaussian process priors"
+      ],
+      "trade_offs": "Algorithm only performs well on specified class; degrades outside assumptions"
+    },
+    {
+      "type": "Context",
+      "description": "Exploit domain-specific structure",
+      "examples": [
+        "Use problem geometry (convexity, Lipschitz continuity)",
+        "Leverage separability for coordinate descent",
+        "Apply problem-specific heuristics or relaxations"
+      ],
+      "trade_offs": "Requires domain knowledge; algorithm becomes specialized"
+    },
+    {
+      "type": "Resource",
+      "description": "Invest in problem analysis before optimization",
+      "examples": [
+        "Empirical study of objective landscape",
+        "Meta-learning to select algorithm per problem",
+        "Ensemble methods combining multiple optimizers"
+      ],
+      "trade_offs": "Additional computational cost for analysis; may not always improve results"
+    }
+  ],
+  "test_or_check": "Check if the claim asserts universal superiority of an optimization algorithm without restricting the problem class. If no distributional assumptions or structure specified, flag as conflicting with NFL.",
+  "references": [
+    "Wolpert, D. H., & Macready, W. G. (1997). No Free Lunch Theorems for Optimization. IEEE Transactions on Evolutionary Computation, 1(1), 67-82. CiteSeerX 10.1.1.138.6606"
+  ],
+  "related_limits": [
+    "No-Free-Lunch (Supervised Learning)",
+    "IPF-00004"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-19",
+  "status": "active",
+  "notes": "The No Free Lunch theorem is often misunderstood. It does not mean all algorithms perform equally on practical problems—only that without assumptions about problem structure, no algorithm has an advantage.",
+  "mechanism_label": "Context",
+  "keywords": [
+    "(Optimization)",
+    "Machine Learning",
+    "No-Free-Lunch",
+    "Optimization",
+    "Search Algorithms",
+    "Theorem"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.063983+00:00"
+  }
+}

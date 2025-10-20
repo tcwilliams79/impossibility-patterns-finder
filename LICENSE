@@ -1,6 +1,22 @@
+Impossibility Patterns Finder (IPF) — Licensing (v1.0)
+Copyright (c) 2025 Thomas C. Williams
+
+This repository uses a SINGLE LICENSE FILE with TWO SECTIONS:
+
+- Section A — SCHEMA & TOOLS (software): MIT License
+- Section B — CATALOG & DOCUMENTATION (content): Creative Commons Attribution 4.0 (CC BY 4.0)
+
+This split matches common practice: programmatic artifacts (schemas, validators, scripts)
+use a permissive software license to maximize reuse in codebases, while text/metadata
+catalog entries and docs use CC BY 4.0 to ensure proper attribution of scholarly content.
+
+===============================================================================
+SECTION A — SCHEMA & TOOLS (MIT License)
+===============================================================================
+
 MIT License
 
-Copyright (c) 2025 tcwilliams79
+Copyright (c) 2025 Thomas C. Williams
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -9,13 +25,68 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+**Applies to:** 
+- JSON Schema files and supporting code (e.g., schema/ipf-schema-v1.0.json, tools/*.py)
+- Build, validation, and integration scripts
+
+===============================================================================
+SECTION B — CATALOG & DOCUMENTATION (Creative Commons Attribution 4.0)
+===============================================================================
+
+This catalog and documentation are licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0). To view a copy of this
+license, visit https://creativecommons.org/licenses/by/4.0/ or send a letter to
+Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+**You are free to:**
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+for any purpose, even commercially.
+
+**Under the following terms:**
+- Attribution — You must give appropriate credit, provide a link to the license,
+  and indicate if changes were made. You may do so in any reasonable manner,
+  but not in any way that suggests the licensor endorses you or your use.
+
+**Applies to:**
+- All catalog entries (catalog/atomic/*.json, catalog/compound/*.json)
+- Narrative documentation and metadata (README.md, schema/*.md, .zenodo.json)
+
+===============================================================================
+ATTRIBUTION & CITATION
+===============================================================================
+
+When using the schema/tools in code: retain the MIT copyright & permission text
+in your distribution.
+
+When using or adapting catalog entries or documentation:
+- Provide attribution: “Impossibility Patterns Finder (IPF) — Catalog v1.0”
+- Include DOI link(s) below
+- Indicate changes, if any
+
+Project citation:
+Williams, Thomas C. 2025. "Impossibility Patterns Finder (IPF) Schema and Catalog v1.0." Zenodo. 
+https://doi.org/10.5281/zenodo.17393656
+
+For individual catalog entries, cite as:
+Williams, Thomas C. 2025. "IPF-XXXXX: [Entry Title]." In Impossibility Patterns Finder Catalog v1.0. Zenodo.
+https://doi.org/10.5281/zenodo.17393656
+
+===============================================================================
+CONTACT
+===============================================================================
+
+Email: impossibility.patterns@gmail.com
+Project: Impossibility Patterns Finder (IPF)
+DOI: https://doi.org/10.5281/zenodo.17393656

@@ -1,0 +1,194 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00011",
+  "title": "Coordination-Incentive-Trust Trilemma",
+  "domain": [
+    "Distributed Systems",
+    "Mechanism Design",
+    "Game Theory",
+    "Consensus Protocols",
+    "Blockchain"
+  ],
+  "mechanism": "C",
+  "formal_statement": "In a system of n autonomous agents where at least one may act strategically or maliciously, no protocol simultaneously guarantees: (1) consensus on a unique outcome for all honest agents; (2) individual rationality (no agent benefits from unilateral deviation); (3) elimination of all trusted third parties; and (4) tolerance of f>n/3 Byzantine failures—absent additional constraints on agent behavior, problem structure, or resource expenditure.",
+  "plain_language": "You cannot build a system where distrusting parties reach perfect agreement, each acts in self-interest, no one is in charge, and it works even when many cheat—not without paying costs in computation, communication, money, or relaxing one of these goals.",
+  "assumptions_scope": [
+    "Agents possess private information or independent utility functions",
+    "No external binding enforcement (courts, contracts with penalties)",
+    "Network model: authenticated channels with specified synchrony assumptions",
+    "Computational rationality: agents are polynomially bounded",
+    "Standard cryptographic assumptions (if applicable)"
+  ],
+  "evidence_grade": "Principle",
+  "evidence_basis": "Synthesized from: Byzantine Agreement bounds (Lamport et al. 1982, Pease et al. 1980), FLP impossibility (Fischer et al. 1985), impossibility results in mechanism design without money (Hurwicz-Reiter 2006), and observed resource trade-offs in deployed systems (Nakamoto 2008, King-Nadal 2012).",
+  "typical_traps": [
+    "Proposing fully decentralized coordination without quantifying resource costs or trust assumptions hidden in setup phases",
+    "Claiming mechanisms are trustless while embedding trust in hardware enclaves, governance processes, or founding parameters",
+    "Designing auctions or voting systems assuming truthful participation without incentive-compatibility analysis",
+    "Asserting blockchain consensus solves coordination without acknowledging PoW energy costs or PoS concentration dynamics",
+    "Conflating cryptographic security (computational hardness) with game-theoretic incentive alignment"
+  ],
+  "escape_hatches": [
+    {
+      "kind": "WeakenRequirement",
+      "description": "Relax perfect consensus requirement",
+      "examples": [
+        "Accept probabilistic finality (eventual consistency)",
+        "Permit approximate agreement within tolerance bounds",
+        "Allow agent-specific views of state (CRDTs, partition tolerance)"
+      ],
+      "trade_offs": "Coordination quality degrades; applications must handle inconsistency windows",
+      "mechanism": "C"
+    },
+    {
+      "type": "Context",
+      "description": "Introduce or accept trust assumptions",
+      "examples": [
+        "Trusted setup ceremony (multiparty computation with setup phase)",
+        "Consortium model (permissioned set of validators)",
+        "Hardware-based trust (SGX enclaves, TPMs)",
+        "Governance layer for exception handling or upgrades"
+      ],
+      "trade_offs": "Trusted components become attack targets; reduces censorship resistance"
+    },
+    {
+      "type": "Resource",
+      "description": "Expend resources to enforce constraints",
+      "examples": [
+        "Computational work (proof-of-work mining, approximately 100 TWh/year for Bitcoin)",
+        "Economic stake and slashing penalties (proof-of-stake bonding)",
+        "Communication overhead (multiple consensus rounds, gossip protocols)",
+        "Side-payments or subsidies (Groves-Clarke VCG mechanisms)"
+      ],
+      "trade_offs": "Direct costs (energy, capital lock-up); potential centralization pressures"
+    },
+    {
+      "type": "Context",
+      "description": "Restrict agent behavior or problem domain",
+      "examples": [
+        "Assume honest majority (reduce f to less than n/3 or less than n/2 depending on synchrony)",
+        "Single-peaked preferences (enables median voter results)",
+        "Verifiable actions (smart contracts with on-chain observability)",
+        "Repeated interactions (reputation systems, folk theorems apply)"
+      ],
+      "trade_offs": "Narrow applicability; mechanisms fail if assumptions violated"
+    }
+  ],
+  "test_or_check": "For any proposed coordination mechanism: (1) Identify what counts as consensus or desired outcome; (2) Map agent incentives—can any agent profit from unilateral deviation? (3) List all trusted entities (setup authorities, hardware, governance roles); (4) Count maximum tolerable failures f and compare to n/3 threshold; (5) Quantify resource costs (computation, stake, communication, monetary transfers). If all four requirements are claimed with f>n/3 and zero added resources/trust, flag as conflicting with this limit.",
+  "references": [
+    {
+      "key": "Lamport-1982",
+      "citation": "Lamport, L., Shostak, R., & Pease, M. (1982). The Byzantine Generals Problem. ACM Transactions on Programming Languages and Systems, 4(3), 382-401. doi:10.1145/357172.357176",
+      "relevance": "Establishes n>3f bound for Byzantine consensus with oral messages",
+      "strength": "foundational"
+    },
+    {
+      "key": "Pease-1980",
+      "citation": "Pease, M., Shostak, R., & Lamport, L. (1980). Reaching Agreement in the Presence of Faults. Journal of the ACM, 27(2), 228-234.",
+      "relevance": "Earlier result on consensus bounds with signed messages",
+      "strength": "foundational"
+    },
+    {
+      "key": "FLP-1985",
+      "citation": "Fischer, M. J., Lynch, N. A., & Paterson, M. S. (1985). Impossibility of distributed consensus with one faulty process. Journal of the ACM, 32(2), 374-382. doi:10.1145/3149.214121",
+      "relevance": "Proves impossibility of deterministic consensus in asynchronous systems with even one failure",
+      "strength": "foundational"
+    },
+    {
+      "key": "Hurwicz-2006",
+      "citation": "Hurwicz, L., & Reiter, S. (2006). Designing Economic Mechanisms. Cambridge University Press. ISBN 978-0521724104",
+      "relevance": "Framework for mechanism design impossibilities without sidepayments",
+      "strength": "foundational"
+    },
+    {
+      "key": "Nakamoto-2008",
+      "citation": "Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. bitcoin.org/bitcoin.pdf",
+      "relevance": "Demonstrates resource-based (PoW) relaxation of trust requirements in practice",
+      "strength": "illustrative"
+    },
+    {
+      "key": "King-2012",
+      "citation": "King, S., & Nadal, S. (2012). PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake. peercoin.net/assets/paper/peercoin-paper.pdf",
+      "relevance": "Alternative resource-based approach using economic stake",
+      "strength": "illustrative"
+    },
+    {
+      "key": "Budish-2015",
+      "citation": "Budish, E., Cramton, P., & Shim, J. (2015). The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response. Quarterly Journal of Economics, 130(4), 1547-1621. doi:10.1093/qje/qjv027",
+      "relevance": "Economic analysis of resource expenditure in coordination games",
+      "strength": "supporting"
+    }
+  ],
+  "related_limits": [
+    "Arrow's Impossibility Theorem",
+    "Byzantine Agreement Bound",
+    "FLP Impossibility",
+    "CAP Theorem",
+    "Revelation Principle Limitations",
+    "IPF-00008"
+  ],
+  "synthesis_components": [
+    {
+      "limit_id": "Byzantine-Agreement-Bound",
+      "role": "Establishes f<n/3 requirement for consensus with Byzantine faults",
+      "mechanism": "R"
+    },
+    {
+      "limit_id": "FLP-Impossibility",
+      "role": "Shows asynchronous deterministic consensus impossible with any faults",
+      "mechanism": "C"
+    },
+    {
+      "limit_id": "Revelation-Principle-Limitations",
+      "role": "Constrains incentive-compatible mechanism design without transfers",
+      "mechanism": "C"
+    }
+  ],
+  "cross_domain_manifestations": [
+    {
+      "domain": "Blockchain/Distributed Ledger",
+      "instance": "Bitcoin's proof-of-work protocol",
+      "analysis": "Relaxes trust requirement (R: expends approximately 100 TWh/year computational work). Accepts probabilistic finality (C: 6-confirmation heuristic, not guaranteed). Result: coordination without central authority, but at massive energy cost.",
+      "reference": "Nakamoto-2008"
+    },
+    {
+      "domain": "Auction Design",
+      "instance": "Vickrey-Clarke-Groves mechanisms",
+      "analysis": "Achieves truthful bidding (individual rationality satisfied) but requires side-payments/subsidies that may exceed revenue (R: monetary transfer). Not budget-balanced without relaxing incentive-compatibility.",
+      "reference": "Hurwicz-2006, Ch. 7"
+    },
+    {
+      "domain": "Distributed Databases",
+      "instance": "CAP Theorem trade-offs",
+      "analysis": "Under network partition (f>0), must choose between Consistency (consensus) or Availability (liveness). Systems pick based on application needs (C: relax one property).",
+      "reference": "Brewer (2000), Gilbert-Lynch (2002)"
+    }
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "This entry demonstrates a compound limit synthesized from multiple theoretical results. The four-way impossibility emerges from the interaction of Byzantine bounds (resource limits on fault tolerance), FLP impossibility (context requirement of synchrony or randomization), and mechanism design constraints (context requirement of aligned incentives or monetary transfers). Real systems necessarily relax at least one requirement, making the trade-offs explicit.",
+  "mechanism_label": "Context",
+  "keywords": [
+    "Blockchain",
+    "Consensus",
+    "Coordination",
+    "Design",
+    "Distributed",
+    "Game",
+    "Incentive",
+    "Mechanism",
+    "Protocols",
+    "Systems",
+    "Theory",
+    "Trilemma"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:33:08.522272+00:00"
+  }
+}

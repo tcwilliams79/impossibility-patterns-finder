@@ -1,0 +1,93 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00004",
+  "title": "No-Free-Lunch Theorem (Supervised Learning)",
+  "domain": [
+    "Machine Learning",
+    "Statistics",
+    "Pattern Recognition"
+  ],
+  "mechanism": "C",
+  "formal_statement": "Averaged uniformly over all possible target functions, the expected off-training-set error for all learning algorithms is identical.",
+  "plain_language": "Without assumptions about the data-generating process, no machine learning algorithm is better than any other at generalizing to new data.",
+  "assumptions_scope": [
+    "All target functions are equally likely (uniform prior)",
+    "Performance measured by generalization error",
+    "Finite or countable hypothesis space",
+    "Training and test data drawn from same distribution"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Benchmarking algorithms without stating distributional assumptions or inductive bias",
+    "Claiming universal superiority based on performance on standard datasets",
+    "Not recognizing that algorithm choice embeds assumptions about data structure",
+    "Ignoring the role of domain knowledge in model selection"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Context",
+      "description": "State explicit inductive bias or prior distribution",
+      "examples": [
+        "Assume smooth decision boundaries (kernel methods, neural networks)",
+        "Impose sparsity priors (LASSO, compressed sensing)",
+        "Use problem-specific architectures (CNNs for images, RNNs for sequences)",
+        "Bayesian approaches with informative priors"
+      ],
+      "trade_offs": "Performance degrades when assumptions violated; bias-variance tradeoff applies"
+    },
+    {
+      "type": "Context",
+      "description": "Restrict task family to structured problems",
+      "examples": [
+        "Computer vision (spatial structure in images)",
+        "Natural language (compositional structure)",
+        "Time series (temporal dependencies)",
+        "Genomics (biological constraints)"
+      ],
+      "trade_offs": "Algorithm becomes specialized; may not transfer to other domains"
+    },
+    {
+      "type": "Resource",
+      "description": "Invest in data quality and quantity",
+      "examples": [
+        "Collect larger training sets to better approximate true distribution",
+        "Careful feature engineering using domain expertise",
+        "Data augmentation to encode invariances",
+        "Active learning to sample informative examples"
+      ],
+      "trade_offs": "Higher data collection and labeling costs; diminishing returns with scale"
+    }
+  ],
+  "test_or_check": "Identify whether the claim assumes or states distributional properties of the data. If algorithm performance claimed without inductive bias or data assumptions, flag as conflicting with NFL.",
+  "references": [
+    "Wolpert, D. H. (1996). The Lack of A Priori Distinctions between Learning Algorithms. Neural Computation, 8(7), 1341-1390."
+  ],
+  "related_limits": [
+    "No-Free-Lunch (Optimization)",
+    "Bias-Variance Tradeoff",
+    "IPF-00003",
+    "IPF-00009"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "This result is fundamental to understanding why domain knowledge matters in machine learning. Successful algorithms succeed precisely because they embed appropriate inductive biases for their target domains.",
+  "mechanism_label": "Context",
+  "keywords": [
+    "(Supervised",
+    "Learning)",
+    "Machine Learning",
+    "No-Free-Lunch",
+    "Pattern Recognition",
+    "Statistics",
+    "Theorem"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.065295+00:00"
+  }
+}

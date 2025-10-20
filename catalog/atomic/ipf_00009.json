@@ -1,0 +1,92 @@
+{
+  "_license": "CC-BY-4.0",
+  "_copyright": "Copyright (c) 2025 Thomas C. Williams",
+  "limit_id": "IPF-00009",
+  "title": "Bias-Variance Tradeoff",
+  "domain": [
+    "Machine Learning",
+    "Statistics",
+    "Predictive Modeling"
+  ],
+  "mechanism": "R",
+  "formal_statement": "For a learning algorithm, the expected prediction error on new data can be decomposed as: Error = Bias² + Variance + Irreducible Error. Reducing bias typically increases variance and vice versa, for fixed data and model class.",
+  "plain_language": "There is a fundamental tradeoff in prediction: simpler models underfit (high bias), complex models overfit (high variance). You cannot minimize both simultaneously without additional resources.",
+  "assumptions_scope": [
+    "Supervised learning with fixed training set",
+    "Squared loss or similar decomposable error metric",
+    "Model complexity is adjustable",
+    "Test data drawn from same distribution as training data"
+  ],
+  "evidence_grade": "Principle",
+  "evidence_basis": "Fundamental decomposition proven in statistical learning theory (Geman et al. 1992, Kohavi & Wolpert 1996). The bias-variance decomposition applies universally to squared loss and demonstrates the inherent tradeoff in model complexity selection.",
+  "typical_traps": [
+    "Chasing both low bias and low variance without adding data or regularization",
+    "Assuming complex models always generalize better",
+    "Not recognizing that overfitting is a resource limitation (insufficient data)",
+    "Optimizing training error without monitoring validation error"
+  ],
+  "escape_hatches": [
+    {
+      "type": "Resource",
+      "description": "Add more training data",
+      "examples": [
+        "Collect larger datasets to support complex models",
+        "Data augmentation to artificially increase sample size",
+        "Transfer learning from related tasks",
+        "Semi-supervised learning with unlabeled data"
+      ],
+      "trade_offs": "Data collection costs; labeling effort; diminishing returns beyond certain scale"
+    },
+    {
+      "type": "Resource",
+      "description": "Use regularization to control complexity",
+      "examples": [
+        "L1/L2 regularization (Ridge, LASSO)",
+        "Dropout for neural networks",
+        "Early stopping in iterative training",
+        "Pruning decision trees or neural networks"
+      ],
+      "trade_offs": "Introduces tuning parameters (regularization strength); may underfit if over-regularized"
+    },
+    {
+      "type": "Context",
+      "description": "Accept optimal tradeoff for given resources",
+      "examples": [
+        "Cross-validation to find best model complexity",
+        "Bayesian model averaging",
+        "Ensemble methods (bagging, boosting) to reduce variance",
+        "Match model capacity to data availability"
+      ],
+      "trade_offs": "May not achieve arbitrarily low error; must accept fundamental limits given data"
+    }
+  ],
+  "test_or_check": "Check if the claim requires both low bias (complex model fits training data well) and low variance (generalizes to new data) without specifying increased data, regularization, or accepting a tradeoff. If yes, flag as conflicting with bias-variance tradeoff.",
+  "references": [
+    "Geman, S., Bienenstock, E., & Doursat, R. (1992). Neural networks and the bias/variance dilemma. Neural Computation, 4(1), 1-58.",
+    "Kohavi, R., & Wolpert, D. H. (1996). Bias Plus Variance Decomposition for Zero-One Loss Functions. In Proceedings of ICML 1996."
+  ],
+  "related_limits": [
+    "No-Free-Lunch (Supervised Learning)",
+    "Overfitting and underfitting",
+    "IPF-00004"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-18",
+  "last_reviewed": "2025-10-20",
+  "status": "active",
+  "notes": "The bias-variance tradeoff is central to statistical learning theory and guides practical model selection. Modern deep learning partially mitigates this through overparameterization, but the fundamental tradeoff persists in data-limited regimes.",
+  "mechanism_label": "Resource",
+  "keywords": [
+    "Bias-Variance",
+    "Machine Learning",
+    "Predictive Modeling",
+    "Statistics",
+    "Tradeoff"
+  ],
+  "quality": {
+    "coverage_assessment": "sufficient"
+  },
+  "provenance": {
+    "created_at": "2025-10-20T03:25:43.071368+00:00"
+  }
+}
