@@ -154,9 +154,14 @@
               "type": {
                 "type": "string",
                 "enum": [
-                  "S",
                   "C",
-                  "R"
+                  "Context",
+                  "R",
+                  "Resource",
+                  "S",
+                  "Self-Reference",
+                  "Self-reference",
+                  "SelfReference"
                 ]
               },
               "description": {
@@ -357,9 +362,12 @@
       "items": {
         "type": "string",
         "enum": [
-          "S",
           "C",
-          "R"
+          "Context",
+          "R",
+          "Resource",
+          "S",
+          "SelfReference"
         ]
       },
       "uniqueItems": true
