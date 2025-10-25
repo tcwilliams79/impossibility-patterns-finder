@@ -9,7 +9,7 @@
     "Statistical Mechanics"
   ],
   "mechanism": "R",
-  "formal_statement": "In an isolated system, the total entropy (disorder) never decreases over time: ΔS ≥ 0. For reversible processes ΔS = 0, for irreversible processes ΔS > 0.",
+  "formal_statement": "In an isolated system, the total entropy (disorder) never decreases over time: \u0394S \u2265 0. For reversible processes \u0394S = 0, for irreversible processes \u0394S > 0.",
   "plain_language": "Isolated systems naturally evolve toward states of higher disorder (entropy). You cannot extract useful work perpetually from a system without an external energy source or gradient.",
   "assumptions_scope": [
     "System is isolated (no energy or matter exchange with environment)",
@@ -40,7 +40,7 @@
       "type": "Resource",
       "description": "Accept fundamental efficiency bounds",
       "examples": [
-        "Carnot efficiency limit for heat engines: η ≤ 1 - Tc/Th",
+        "Carnot efficiency limit for heat engines: \u03b7 \u2264 1 - Tc/Th",
         "Minimum energy for computation (Landauer limit)",
         "Accept energy dissipation as waste heat",
         "Design for maximum achievable efficiency, not perfection"
@@ -61,8 +61,8 @@
   ],
   "test_or_check": "Check if the claim requires perpetual work extraction from isolated system, or perfect efficiency in energy conversion, or entropy decrease without compensating increase elsewhere. If yes, flag as conflicting with Second Law.",
   "references": [
-    "Carnot, S. (1824). Réflexions sur la puissance motrice du feu et sur les machines propres à développer cette puissance. Bachelier.",
-    "Clausius, R. (1865). Über verschiedene für die Anwendung bequeme Formen der Hauptgleichungen der mechanischen Wärmetheorie. Annalen der Physik, 201(7), 353-400."
+    "Carnot, S. (1824). R\u00e9flexions sur la puissance motrice du feu et sur les machines propres \u00e0 d\u00e9velopper cette puissance. Bachelier.",
+    "Clausius, R. (1865). \u00dcber verschiedene f\u00fcr die Anwendung bequeme Formen der Hauptgleichungen der mechanischen W\u00e4rmetheorie. Annalen der Physik, 201(7), 353-400."
   ],
   "related_limits": [
     "Landauer's principle (computational thermodynamics)",

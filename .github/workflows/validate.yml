@@ -1,0 +1,60 @@
+name: Validate IPF JSON
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt jsonschema
+
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt jsonschema
+
+      - name: Validate catalog and examples
+        run: |
+          python validation/validate.py --schema schema/ipf-schema-v1.0.json catalog examples
+
+      - name: "Sanity: invalid samples should fail"
+        shell: bash
+        run: |
+          # Only run if invalid samples exist
+          if ls tests/invalid/*.json >/dev/null 2>&1; then
+            # Command should FAIL (non-zero). If it succeeds, we error out.
+            if python validation/validate.py --schema schema/ipf-schema-v1.0.json tests/invalid/*.json; then
+              echo "Expected failure but validator returned success"; exit 1
+            else
+              echo "Sanity check passed (invalid samples failed as expected)"
+            fi
+          else
+            echo "No tests/invalid/*.json files found; skipping sanity check."
+          fi
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true

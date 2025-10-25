@@ -11,8 +11,8 @@
     "Blockchain"
   ],
   "mechanism": "C",
-  "formal_statement": "In a system of n autonomous agents where at least one may act strategically or maliciously, no protocol simultaneously guarantees: (1) consensus on a unique outcome for all honest agents; (2) individual rationality (no agent benefits from unilateral deviation); (3) elimination of all trusted third parties; and (4) tolerance of f>n/3 Byzantine failures—absent additional constraints on agent behavior, problem structure, or resource expenditure.",
-  "plain_language": "You cannot build a system where distrusting parties reach perfect agreement, each acts in self-interest, no one is in charge, and it works even when many cheat—not without paying costs in computation, communication, money, or relaxing one of these goals.",
+  "formal_statement": "In a system of n autonomous agents where at least one may act strategically or maliciously, no protocol simultaneously guarantees: (1) consensus on a unique outcome for all honest agents; (2) individual rationality (no agent benefits from unilateral deviation); (3) elimination of all trusted third parties; and (4) tolerance of f>n/3 Byzantine failures\u2014absent additional constraints on agent behavior, problem structure, or resource expenditure.",
+  "plain_language": "You cannot build a system where distrusting parties reach perfect agreement, each acts in self-interest, no one is in charge, and it works even when many cheat\u2014not without paying costs in computation, communication, money, or relaxing one of these goals.",
   "assumptions_scope": [
     "Agents possess private information or independent utility functions",
     "No external binding enforcement (courts, contracts with penalties)",
@@ -75,7 +75,7 @@
       "trade_offs": "Narrow applicability; mechanisms fail if assumptions violated"
     }
   ],
-  "test_or_check": "For any proposed coordination mechanism: (1) Identify what counts as consensus or desired outcome; (2) Map agent incentives—can any agent profit from unilateral deviation? (3) List all trusted entities (setup authorities, hardware, governance roles); (4) Count maximum tolerable failures f and compare to n/3 threshold; (5) Quantify resource costs (computation, stake, communication, monetary transfers). If all four requirements are claimed with f>n/3 and zero added resources/trust, flag as conflicting with this limit.",
+  "test_or_check": "For any proposed coordination mechanism: (1) Identify what counts as consensus or desired outcome; (2) Map agent incentives\u2014can any agent profit from unilateral deviation? (3) List all trusted entities (setup authorities, hardware, governance roles); (4) Count maximum tolerable failures f and compare to n/3 threshold; (5) Quantify resource costs (computation, stake, communication, monetary transfers). If all four requirements are claimed with f>n/3 and zero added resources/trust, flag as conflicting with this limit.",
   "references": [
     {
       "key": "Lamport-1982",

@@ -11,7 +11,7 @@ authors:
 repository-code: "https://github.com/tcwilliams79/impossibility-patterns-finder"
 url: "https://doi.org/10.5281/zenodo.17393656"
 doi: 10.5281/zenodo.17393656
-license: 
+license:
   - Catalog under CC-BY-4.0
   - Schema under MIT
 keywords:

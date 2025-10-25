@@ -1,0 +1,24 @@
+name: Propose a new IPF entry
+description: Suggest a new impossibility pattern for the catalog
+body:
+  - type: input
+    id: title
+    attributes: { label: Title, placeholder: "Arrow’s Impossibility (1951)" }
+    validations: { required: true }
+  - type: dropdown
+    id: mechanism
+    attributes: { label: Mechanism, options: [S, C, R] }
+    validations: { required: true }
+  - type: textarea
+    id: formal
+    attributes: { label: Formal statement }
+    validations: { required: true }
+  - type: textarea
+    id: assumptions
+    attributes: { label: Assumptions / Scope }
+  - type: textarea
+    id: escape
+    attributes: { label: Escape hatches (type + trade-offs) }
+  - type: textarea
+    id: refs
+    attributes: { label: Primary references (DOI/URL) }

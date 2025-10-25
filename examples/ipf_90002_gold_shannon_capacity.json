@@ -1,0 +1,126 @@
+{
+  "limit_id": "IPF-90002",
+  "title": "Shannon Capacity Converse (No Reliable Communication Above Capacity)",
+  "domain": [
+    "Information Theory",
+    "Communications"
+  ],
+  "mechanism": "R",
+  "formal_statement": "For a stationary memoryless channel with capacity C, no sequence of (n, R) block codes with rate R > C can achieve vanishing block error probability as n \u2192 \u221e.",
+  "plain_language": "If you try to send information faster than a channel\u2019s Shannon capacity, there is no coding scheme that will make the error probability go to zero as messages get longer.",
+  "assumptions_scope": [
+    "Discrete memoryless (or stationary memoryless) channel model",
+    "Capacity C defined in the Shannon sense (bits per channel use)",
+    "Reliability means block error probability tends to zero as blocklength n\u2192\u221e"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Confusing finite-blocklength performance with asymptotic reliability guarantees.",
+    "Assuming feedback or common randomness increases capacity for memoryless channels.",
+    "Equating zero-error capacity with Shannon capacity; they differ."
+  ],
+  "escape_hatches": [
+    {
+      "kind": "ResourceBounded",
+      "description": "Increase SNR, bandwidth, or change the channel to raise capacity C until the target rate R \u2264 C.",
+      "examples": [
+        "Add bandwidth (AWGN: C = B log2(1+SNR))",
+        "Use better physical layer to reduce noise"
+      ],
+      "trade_offs": "Requires more physical resources or infrastructure."
+    },
+    {
+      "kind": "WeakenRequirement",
+      "description": "Permit non-vanishing error probability \u03b5>0 (fixed) instead of requiring error\u21920.",
+      "examples": [
+        "Operate at fixed block error 10\u207b\u00b3 and use ARQ/outer codes to mitigate"
+      ],
+      "trade_offs": "Not reliable in the asymptotic sense; overall system still experiences errors."
+    },
+    {
+      "kind": "ReinterpretObjective",
+      "description": "Use list decoding or allow erasures to change the success criterion.",
+      "examples": [
+        "List decoding with bounded list size >1",
+        "Erasure decoding with retransmission"
+      ],
+      "trade_offs": "Objective differs from unique, zero-error decoding; additional higher-layer costs."
+    }
+  ],
+  "test_or_check": "Given measured SNR and bandwidth for an AWGN-like link, compute C = B log2(1+SNR). If a claim proposes reliable rate R > C without changing the channel (SNR/B), the claim conflicts with the converse theorem.",
+  "references": [
+    "Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal.",
+    {
+      "key": "CoverThomas-2006",
+      "citation": "Cover, T. M., & Thomas, J. A. (2006). Elements of Information Theory (2nd ed.). Wiley.",
+      "relevance": "Textbook treatment of channel capacity, converse and achievability.",
+      "strength": "foundational"
+    },
+    {
+      "key": "Arimoto-1973",
+      "citation": "Arimoto, S. (1973). On the Converse to the Coding Theorem for Discrete Memoryless Channels. IEEE Transactions on Information Theory.",
+      "relevance": "Strong converse for DMCs.",
+      "strength": "supporting"
+    },
+    {
+      "key": "Wolfowitz-1964",
+      "citation": "Wolfowitz, J. (1964). Coding Theorems of Information Theory (2nd ed.). Springer.",
+      "relevance": "Strong converse and refinements.",
+      "strength": "supporting"
+    }
+  ],
+  "related_limits": [
+    "Data processing inequality",
+    "Zero-error capacity (Shannon 1956)"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-25",
+  "last_reviewed": "2025-10-25",
+  "status": "active",
+  "mechanism_label": "Resource",
+  "mechanism_secondary": [
+    "Context"
+  ],
+  "scale_level": "macro",
+  "keywords": [
+    "capacity",
+    "converse",
+    "finite blocklength",
+    "AWGN",
+    "DMC"
+  ],
+  "provenance": {
+    "created_by": "IPF maintainers",
+    "created_at": "2025-10-25T12:30:00Z",
+    "updated_at": "2025-10-25T12:30:00Z",
+    "reviewers": [
+      "TBD"
+    ]
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "text": "Channel is stationary memoryless (DMC/AWGN class).",
+      "category": "model",
+      "necessary": true
+    },
+    {
+      "id": "A2",
+      "text": "Reliability criterion is vanishing block error probability.",
+      "category": "structural",
+      "necessary": true
+    }
+  ],
+  "bridges": [
+    {
+      "type": "Implication",
+      "target_id": "Data processing inequality",
+      "note": "Capacity upper bounds align with DPI limits."
+    },
+    {
+      "type": "Analogy",
+      "target_id": "Zero-error capacity (Shannon 1956)",
+      "note": "Different notion of capacity under zero-error criterion."
+    }
+  ]
+}
