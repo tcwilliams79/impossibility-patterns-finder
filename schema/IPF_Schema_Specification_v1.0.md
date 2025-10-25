@@ -2,12 +2,12 @@
 
 ## Metadata
 
-**Title:** Impossibility Patterns Finder Catalog Entry Schema  
-**Version:** 1.0  
-**Date:** 2025-10-19  
-**Author:** Thomas C. Williams  
-**License:** CC BY 4.0  
-**DOI:** [To be assigned by Zenodo]  
+**Title:** Impossibility Patterns Finder Catalog Entry Schema
+**Version:** 1.0
+**Date:** 2025-10-19
+**Author:** Thomas C. Williams
+**License:** CC BY 4.0
+**DOI:** [To be assigned by Zenodo]
 **Related Work:** Williams (2025) IPF Concept Note v0.1, DOI: 10.5281/zenodo.17388374
 
 ## Abstract

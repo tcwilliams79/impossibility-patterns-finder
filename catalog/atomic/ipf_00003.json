@@ -69,7 +69,7 @@
   "date_added": "2025-10-18",
   "last_reviewed": "2025-10-19",
   "status": "active",
-  "notes": "The No Free Lunch theorem is often misunderstood. It does not mean all algorithms perform equally on practical problems—only that without assumptions about problem structure, no algorithm has an advantage.",
+  "notes": "The No Free Lunch theorem is often misunderstood. It does not mean all algorithms perform equally on practical problems\u2014only that without assumptions about problem structure, no algorithm has an advantage.",
   "mechanism_label": "Context",
   "keywords": [
     "(Optimization)",

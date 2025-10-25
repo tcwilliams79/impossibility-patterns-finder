@@ -9,7 +9,7 @@
     "Predictive Modeling"
   ],
   "mechanism": "R",
-  "formal_statement": "For a learning algorithm, the expected prediction error on new data can be decomposed as: Error = Bias² + Variance + Irreducible Error. Reducing bias typically increases variance and vice versa, for fixed data and model class.",
+  "formal_statement": "For a learning algorithm, the expected prediction error on new data can be decomposed as: Error = Bias\u00b2 + Variance + Irreducible Error. Reducing bias typically increases variance and vice versa, for fixed data and model class.",
   "plain_language": "There is a fundamental tradeoff in prediction: simpler models underfit (high bias), complex models overfit (high variance). You cannot minimize both simultaneously without additional resources.",
   "assumptions_scope": [
     "Supervised learning with fixed training set",

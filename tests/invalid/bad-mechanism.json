@@ -1,0 +1,34 @@
+{
+  "limit_id": "IPF-99990",
+  "title": "X",
+  "domain": [
+    "Computation"
+  ],
+  "mechanism": "X",
+  "formal_statement": "\u2026",
+  "plain_language": "\u2026",
+  "assumptions_scope": [
+    "\u2026"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "\u2026"
+  ],
+  "escape_hatches": [
+    {
+      "kind": "RestrictDomain",
+      "description": "\u2026"
+    }
+  ],
+  "test_or_check": "\u2026",
+  "references": [
+    "\u2026"
+  ],
+  "related_limits": [
+    "\u2026"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-25",
+  "last_reviewed": "2025-10-25",
+  "status": "active"
+}

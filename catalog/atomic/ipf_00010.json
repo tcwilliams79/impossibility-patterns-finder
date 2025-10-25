@@ -9,7 +9,7 @@
     "Signal Processing"
   ],
   "mechanism": "R",
-  "formal_statement": "For a communication channel with bandwidth B and signal-to-noise ratio SNR, the maximum reliable data rate (channel capacity) is: C = B log₂(1 + SNR) bits per second. Arbitrarily low error rates are achievable at rates below capacity; rates above capacity have irreducible error.",
+  "formal_statement": "For a communication channel with bandwidth B and signal-to-noise ratio SNR, the maximum reliable data rate (channel capacity) is: C = B log\u2082(1 + SNR) bits per second. Arbitrarily low error rates are achievable at rates below capacity; rates above capacity have irreducible error.",
   "plain_language": "There is a fundamental limit to how much information can be reliably transmitted through a noisy channel, determined by bandwidth and signal strength. You cannot exceed this limit regardless of coding scheme.",
   "assumptions_scope": [
     "Additive white Gaussian noise (AWGN) channel",
@@ -68,7 +68,7 @@
       "trade_offs": "Reduced throughput or reliability; may not meet application requirements"
     }
   ],
-  "test_or_check": "Check if the claim requires reliable transmission at rates exceeding C = B log₂(1 + SNR) for given bandwidth and SNR. If arbitrarily low error rate claimed above capacity, flag as conflicting with Shannon limit.",
+  "test_or_check": "Check if the claim requires reliable transmission at rates exceeding C = B log\u2082(1 + SNR) for given bandwidth and SNR. If arbitrarily low error rate claimed above capacity, flag as conflicting with Shannon limit.",
   "references": [
     "Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27(3), 379-423.",
     "Cover, T. M., & Thomas, J. A. (2006). Elements of Information Theory (2nd ed.). Wiley-Interscience."

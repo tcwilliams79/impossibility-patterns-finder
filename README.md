@@ -1,17 +1,87 @@
+![Validate](https://github.com/tcwilliams79/impossibility-patterns-finder/actions/workflows/validate.yml/badge.svg)
 # IPF Catalog v1.0 - Seed Entries
 
 ## Overview
 
 This directory contains the seed catalog for the Impossibility Patterns Finder (IPF) project, consisting of 11 validated entries spanning multiple scientific domains.
 
-**Catalog Version:** 1.0  
-**Schema Version:** 1.0  
-**Publication Date:** 2025-10-19  
-**Author:** Thomas C. Williams  
-**License:** 
+**Catalog Version:** 1.0
+**Schema Version:** 1.0
+**Publication Date:** 2025-10-19
+**Author:** Thomas C. Williams
+**License:**
 Schema & tools: MIT (see Section A in LICENSE)
 Catalog & docs: CC BY 4.0 (see Section B in LICENSE)
-**DOI:** [To be assigned]
+**DOI:** 10.5281/zenodo.17393655
+
+
+
+## Quickstart (Windows, macOS/Linux)
+
+**Prereqs:** Python ≥3.10 (tested on 3.13), git.
+
+### 1) Clone & set up
+
+**macOS/Linux**
+
+git clone https://github.com/tcwilliams79/impossibility-patterns-finder
+cd impossibility-patterns-finder
+
+python3 -m venv .venv && source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+
+**Windows (PowerShell)**
+
+git clone https://github.com/tcwilliams79/impossibility-patterns-finder
+cd impossibility-patterns-finder
+
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1   # If this is blocked, use: .\.venv\Scripts\activate.bat
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+### 2) Validate all JSON entries (recommended)
+
+If you pulled the latest repo with the cross-platform runner:
+
+**macOS/Linux**
+
+python validation/validate_all.py --schema schema/ipf-schema-v1.0.json --dirs catalog examples
+
+**Windows**
+
+python validation\validate_all.py --schema schema\ipf-schema-v1.0.json --dirs catalog examples
+
+**Expected output (success):**
+
+✓ All JSON documents validate against IPF Schema
+
+### 3) Validate a single file (original script)
+
+The original script lives under validation/. Example:
+
+**macOS/Linux**
+
+python validation/validate.py catalog/atomic/IPF-00001.json
+
+**Windows**
+
+python validation\validate.py catalog\atomic\IPF-00001.json
+
+The README examples that show python validate.py … refer to this validator; the correct path is validation/validate.py. The sample success message in the repo is:
+
+✓ IPF-00001.json is valid
+
+(See the “Validation” section in the repo README.)
+
+### Troubleshooting
+
+* ModuleNotFoundError: jsonschema → pip install jsonschema
+
+* PowerShell activation blocked → run Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass once, or use .\.venv\Scripts\activate.bat.
+
 
 ## Contents
 
@@ -179,13 +249,13 @@ To cite the catalog:
 
 **Individual Entry:**
 ```
-Williams, Thomas C. 2025. "IPF-00001: Halting Problem (Undecidability)." 
+Williams, Thomas C. 2025. "IPF-00001: Halting Problem (Undecidability)."
 Impossibility Patterns Finder Catalog v1.0. Zenodo. [DOI]
 ```
 
 **Entire Catalog:**
 ```
-Williams, Thomas C. 2025. Impossibility Patterns Finder Catalog v1.0. 
+Williams, Thomas C. 2025. Impossibility Patterns Finder Catalog v1.0.
 Zenodo. [DOI]
 ```
 

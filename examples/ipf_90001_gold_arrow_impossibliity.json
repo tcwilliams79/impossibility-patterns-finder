@@ -1,0 +1,122 @@
+{
+  "limit_id": "IPF-90001",
+  "title": "Arrow\u2019s Impossibility Theorem (1951)",
+  "domain": [
+    "Economics",
+    "Social Choice"
+  ],
+  "mechanism": "C",
+  "formal_statement": "For three or more alternatives, no Social Welfare Function (SWF) mapping unrestricted individual weak orderings to a complete and transitive social ranking can satisfy Pareto efficiency, Independence of Irrelevant Alternatives (IIA), and Non-dictatorship simultaneously.",
+  "plain_language": "With at least three choices, you cannot rank options for a group in a way that always respects unanimous improvements, ignores irrelevant options, and avoids dictatorship\u2014unless you restrict the kinds of preferences or drop an axiom.",
+  "assumptions_scope": [
+    "At least three alternatives",
+    "Individuals have complete and transitive preferences (weak orders)",
+    "SWF returns a complete and transitive social ranking",
+    "Preference domain is unrestricted (all weak orderings allowed)"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Confusing choice rules (pick a winner) with social welfare functions (return a full ranking).",
+    "Assuming majority rule rankings are always transitive.",
+    "Overlooking domain restrictions (e.g., single-peaked) that evade the impossibility."
+  ],
+  "escape_hatches": [
+    {
+      "kind": "RestrictDomain",
+      "description": "Limit preferences to single-peaked on a line; median voter and certain aggregation rules yield transitive social rankings.",
+      "examples": [
+        "Single-peaked domain",
+        "Single-crossing preferences"
+      ],
+      "trade_offs": "Assumption may be unrealistic in many settings."
+    },
+    {
+      "kind": "ReinterpretObjective",
+      "description": "Switch from SWF to a Social Choice Function (SCF) that selects a winner; some SCFs satisfy analogues under weaker conditions.",
+      "examples": [
+        "Randomized tie-breaks",
+        "Scoring rules for winner selection"
+      ],
+      "trade_offs": "Does not provide a complete social ranking."
+    },
+    {
+      "kind": "AllowError",
+      "description": "Allow small probability of violating IIA or Pareto or accept approximate transitivity.",
+      "examples": [
+        "Probabilistic aggregation",
+        "Noisy rankings"
+      ],
+      "trade_offs": "Axioms no longer hold exactly; interpretation depends on tolerance."
+    }
+  ],
+  "test_or_check": "Verify the setting has \u22653 alternatives, unrestricted domain, and requires an SWF. If all Arrow axioms are claimed, construct or search for a preference profile (e.g., Condorcet cycle) to refute transitivity or diagnose which axiom is violated.",
+  "references": [
+    "Arrow, K. J. (1951). Social Choice and Individual Values. Wiley.",
+    {
+      "key": "Sen-1970",
+      "citation": "Sen, A. (1970). Collective Choice and Social Welfare. Holden-Day.",
+      "relevance": "Extensions and related impossibility results.",
+      "strength": "supporting"
+    }
+  ],
+  "related_limits": [
+    "Gibbard\u2013Satterthwaite theorem",
+    "Condorcet paradox"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-25",
+  "last_reviewed": "2025-10-25",
+  "status": "active",
+  "mechanism_label": "Context",
+  "mechanism_secondary": [
+    "Resource"
+  ],
+  "scale_level": "macro",
+  "keywords": [
+    "social welfare function",
+    "IIA",
+    "Pareto",
+    "non-dictatorship",
+    "single-peaked"
+  ],
+  "provenance": {
+    "created_by": "IPF maintainers",
+    "created_at": "2025-10-25T12:10:00Z",
+    "updated_at": "2025-10-25T12:10:00Z",
+    "reviewers": [
+      "TBD"
+    ]
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "text": "Number of alternatives \u2265 3.",
+      "category": "structural",
+      "necessary": true
+    },
+    {
+      "id": "A2",
+      "text": "Individual preferences are weak orders (complete and transitive).",
+      "category": "epistemic",
+      "necessary": true
+    },
+    {
+      "id": "A3",
+      "text": "Domain of preferences is unrestricted.",
+      "category": "structural",
+      "necessary": true
+    }
+  ],
+  "bridges": [
+    {
+      "type": "Incompatibility",
+      "target_id": "Gibbard\u2013Satterthwaite theorem",
+      "note": "Both illustrate constraints on aggregation without dictatorship."
+    },
+    {
+      "type": "Analogy",
+      "target_id": "Condorcet paradox",
+      "note": "Cyclic majorities motivate impossibility."
+    }
+  ]
+}

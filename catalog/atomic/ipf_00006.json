@@ -61,8 +61,8 @@
   ],
   "test_or_check": "Identify if the claim requires simultaneous precise knowledge of non-commuting observables (position-momentum, energy-time, angular momentum components). If yes, flag as conflicting with uncertainty principle.",
   "references": [
-    "Heisenberg, W. (1927). Über den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik. Zeitschrift für Physik, 43(3-4), 172-198.",
-    "Kennard, E. H. (1927). Zur Quantenmechanik einfacher Bewegungstypen. Zeitschrift für Physik, 44(4-5), 326-352."
+    "Heisenberg, W. (1927). \u00dcber den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik. Zeitschrift f\u00fcr Physik, 43(3-4), 172-198.",
+    "Kennard, E. H. (1927). Zur Quantenmechanik einfacher Bewegungstypen. Zeitschrift f\u00fcr Physik, 44(4-5), 326-352."
   ],
   "related_limits": [
     "No-Cloning Theorem",

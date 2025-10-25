@@ -1,0 +1,40 @@
+{
+  "limit_id": "IPF-99999",
+  "title": "Halting Problem (Turing, 1936)",
+  "domain": [
+    "Computation"
+  ],
+  "mechanism": "S",
+  "formal_statement": "There does not exist a Turing machine H that decides for all program\u2013input pairs (P, x) whether P halts on x.",
+  "plain_language": "No single algorithm decides for every program+input whether it halts.",
+  "assumptions_scope": [
+    "Classical, deterministic, Turing-complete model",
+    "Decision procedure must be total and correct on all pairs"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Assuming a total, sound, complete termination analyzer exists for all programs."
+  ],
+  "escape_hatches": [
+    {
+      "kind": "RestrictDomain",
+      "description": "Decide termination on non-universal program classes (finite-state, structurally restricted).",
+      "examples": [
+        "Finite automata",
+        "Ranking-function templates"
+      ],
+      "trade_offs": "Not universal."
+    }
+  ],
+  "test_or_check": "Reduce any claimed universal halting-decider via the standard diagonalization construction.",
+  "references": [
+    "Turing, A. M. (1936). On Computable Numbers... Proc. LMS. https://doi.org/10.1112/plms/s2-42.1.230"
+  ],
+  "related_limits": [
+    "Rice's Theorem"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-25",
+  "last_reviewed": "2025-10-25",
+  "status": "active"
+}

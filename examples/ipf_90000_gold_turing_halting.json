@@ -1,0 +1,113 @@
+{
+  "limit_id": "IPF-90000",
+  "title": "Halting Problem (Turing, 1936)",
+  "domain": [
+    "Computation"
+  ],
+  "mechanism": "S",
+  "formal_statement": "There does not exist a Turing machine H that decides for all program\u2013input pairs (P, x) whether P halts on x; formally: \u2200P,x, \u00ac\u2203H such that H(P,x)=1 iff P halts on x.",
+  "plain_language": "No single algorithm can determine for every possible program and input whether that program will eventually stop or run forever.",
+  "assumptions_scope": [
+    "Classical, deterministic, Turing-complete computation model",
+    "Decision procedure must be total and correct on all program\u2013input pairs"
+  ],
+  "evidence_grade": "Theorem",
+  "typical_traps": [
+    "Assuming a termination analyzer can be both sound and complete for all programs.",
+    "Confusing 'no general solver' with 'no solver for any restricted subclass'.",
+    "Believing that randomization or timeouts yield a decision procedure with zero error for all cases."
+  ],
+  "escape_hatches": [
+    {
+      "kind": "RestrictDomain",
+      "description": "Decidable for non-universal models (e.g., finite-state programs) or for language fragments with structural constraints.",
+      "examples": [
+        "Finite automata",
+        "Loop-free programs",
+        "Well-founded recursion with proven measures"
+      ],
+      "trade_offs": "Loses generality; results do not extend to arbitrary Turing-complete programs."
+    },
+    {
+      "kind": "ResourceBounded",
+      "description": "Impose bounded-time or bounded-space execution and report 'unknown' if bounds are exceeded.",
+      "examples": [
+        "Static time-out monitors",
+        "Fuel-based evaluators"
+      ],
+      "trade_offs": "Not a decision procedure; may return 'unknown' on halting programs."
+    },
+    {
+      "kind": "AllowError",
+      "description": "Permit one-sided or two-sided error (e.g., probabilistic testers) on some instances.",
+      "examples": [
+        "Heuristics that may misclassify non-halting loops"
+      ],
+      "trade_offs": "Violates the requirement of total correctness for all inputs."
+    }
+  ],
+  "test_or_check": "If a claim proposes a universally correct, total static analyzer that decides termination for all programs and inputs, reduce its correctness to constructing H(P,x). Show that composing the claimed analyzer with a diagonal program yields a contradiction (standard self-reference construction).",
+  "references": [
+    "Turing, A. M. (1936). On Computable Numbers, with an Application to the Entscheidungsproblem. Proceedings of the London Mathematical Society. https://doi.org/10.1112/plms/s2-42.1.230",
+    {
+      "key": "Rice-1953",
+      "citation": "Rice, H. G. (1953). Classes of Recursively Enumerable Sets and Their Decision Problems. Transactions of the American Mathematical Society.",
+      "relevance": "Related impossibility for non-trivial semantic properties of programs.",
+      "strength": "supporting"
+    }
+  ],
+  "related_limits": [
+    "Rice's Theorem",
+    "Busy Beaver function uncomputability"
+  ],
+  "version": "1.0",
+  "date_added": "2025-10-25",
+  "last_reviewed": "2025-10-25",
+  "status": "active",
+  "mechanism_label": "SelfReference",
+  "mechanism_secondary": [
+    "Context",
+    "Resource"
+  ],
+  "scale_level": "universal",
+  "keywords": [
+    "undecidability",
+    "termination",
+    "computability",
+    "diagonalization"
+  ],
+  "provenance": {
+    "created_by": "IPF maintainers",
+    "created_at": "2025-10-25T12:00:00Z",
+    "updated_at": "2025-10-25T12:00:00Z",
+    "reviewers": [
+      "TBD"
+    ]
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "text": "Model of computation is deterministic and Turing-complete.",
+      "category": "computational",
+      "necessary": true
+    },
+    {
+      "id": "A2",
+      "text": "Decision procedure must terminate and be correct on all inputs (total correctness).",
+      "category": "structural",
+      "necessary": true
+    }
+  ],
+  "bridges": [
+    {
+      "type": "Reduction",
+      "target_id": "Rice's Theorem",
+      "note": "Many termination-like properties are instances of semantic non-triviality."
+    },
+    {
+      "type": "Implication",
+      "target_id": "Busy Beaver",
+      "note": "A general halting solver would compute Busy Beaver values."
+    }
+  ]
+}

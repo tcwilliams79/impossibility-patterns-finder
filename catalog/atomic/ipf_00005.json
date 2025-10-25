@@ -9,7 +9,7 @@
     "Quantum Computing"
   ],
   "mechanism": "C",
-  "formal_statement": "There is no unitary operation that can copy an arbitrary unknown quantum state. For any quantum state |ψ⟩, no process can create |ψ⟩|ψ⟩ from |ψ⟩|0⟩ for all |ψ⟩.",
+  "formal_statement": "There is no unitary operation that can copy an arbitrary unknown quantum state. For any quantum state |\u03c8\u27e9, no process can create |\u03c8\u27e9|\u03c8\u27e9 from |\u03c8\u27e9|0\u27e9 for all |\u03c8\u27e9.",
   "plain_language": "You cannot make a perfect copy of an unknown quantum state. Unlike classical information, quantum information cannot be duplicated.",
   "assumptions_scope": [
     "Quantum state is unknown (not in a known basis)",
@@ -29,7 +29,7 @@
       "type": "Context",
       "description": "Clone states from known basis",
       "examples": [
-        "Copy computational basis states |0⟩, |1⟩ (classical information)",
+        "Copy computational basis states |0\u27e9, |1\u27e9 (classical information)",
         "Clone states from pre-agreed orthogonal set",
         "Prepare multiple identical states from known preparation procedure"
       ],

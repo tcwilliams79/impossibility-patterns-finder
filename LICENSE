@@ -36,7 +36,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-**Applies to:** 
+**Applies to:**
 - JSON Schema files and supporting code (e.g., schema/ipf-schema-v1.0.json, tools/*.py)
 - Build, validation, and integration scripts
 
@@ -76,7 +76,7 @@ When using or adapting catalog entries or documentation:
 - Indicate changes, if any
 
 Project citation:
-Williams, Thomas C. 2025. "Impossibility Patterns Finder (IPF) Schema and Catalog v1.0." Zenodo. 
+Williams, Thomas C. 2025. "Impossibility Patterns Finder (IPF) Schema and Catalog v1.0." Zenodo.
 https://doi.org/10.5281/zenodo.17393656
 
 For individual catalog entries, cite as:
